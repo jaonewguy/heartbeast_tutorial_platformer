@@ -23,12 +23,15 @@ animations = [ {
 extents = Vector2( 5.75, 3.75 )
 
 [node name="WalkingEnemy" type="KinematicBody2D"]
+collision_layer = 2
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 1, -12 )
 frames = SubResource( 3 )
 animation = "Walking"
+playing = true
+flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0.25, -5.75 )
@@ -40,7 +43,7 @@ enabled = true
 cast_to = Vector2( 0, 4 )
 
 [node name="LedgeCheckLeft" type="RayCast2D" parent="."]
-position = Vector2( -5, -1 )
+position = Vector2( -4, -1 )
 enabled = true
 cast_to = Vector2( 0, 4 )
 __meta__ = {
